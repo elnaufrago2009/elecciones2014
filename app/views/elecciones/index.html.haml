@@ -1,0 +1,20 @@
+.page-header
+  %h1 Elecciones
+= link_to 'Crear Eleccione', new_eleccione_path, class: 'btn btn-primary'
+%br
+%br
+.row
+  .col-sm-12
+    .table-responsive
+      %table.table
+        %tr
+          %th Nombre
+ 
+          %th Acciones
+        - @elecciones.each do |eleccione|
+          %tr
+            %td= eleccione.nombre
+            %td
+              = link_to 'Ver', eleccione, class: 'btn btn-info'              
+              = link_to 'Editar', edit_eleccione_path(eleccione), class: 'btn btn-success'
+              = link_to 'Eliminar', eleccione, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

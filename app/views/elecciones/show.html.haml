@@ -1,0 +1,9 @@
+.page-header
+  %h1 Elecciones
+  %p
+    %b Nombre:
+    = @eleccione.nombre
+%br
+= link_to 'Editar', edit_eleccione_path(@eleccione), class: 'btn btn-success'
+= link_to 'Regresar', elecciones_path, class: 'btn btn-warning'
+

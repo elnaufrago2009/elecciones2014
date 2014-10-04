@@ -1,0 +1,47 @@
+.row 
+  .col-sm-6
+    %h1 Mesas
+  .col-sm-6.text-right
+    %br
+    %br
+    = form_tag("/mesas", method: "get", class: 'form-inline') do
+      .input-group
+        - if !params[:q].nil?
+          - q = params[:q]
+        - else
+          - q = ''
+        = text_field_tag :q, nil,  class: 'form-control', placeholder: 'Nombre', value: "#{q}"
+        .input-group-btn
+          %button.btn.btn-default{type: "submit"}
+            %span.glyphicon.glyphicon-search  
+
+  
+= link_to 'Crear Mesa', new_mesa_path, class: 'btn btn-primary'
+%br
+%br
+.row
+  .col-sm-12
+    .table-responsive
+      %table.table.table-bordered.table-condensed.table-hover
+        %tr.well
+          %th #
+          %th Numero Mesa
+          %th Colegio    
+          %th Votos Concori 
+          %th Ganado/Perdido     
+          %th Acciones
+        - i = 1
+        - @mesas.each do |mesa|
+          %tr
+            %td= i
+            %td
+              Nº
+              = mesa.nombre
+            %td= mesa.colegio.nombre
+            %td= mesa.postulantes[0].edgar_rogelio_concori_coaquira
+            %td 
+            %td
+              = link_to 'Ver', mesa, class: 'btn btn-info btn-xs'              
+              = link_to 'Editar', edit_mesa_path(mesa), class: 'btn btn-success btn-xs'
+              = link_to 'Eliminar', mesa, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger btn-xs'
+          - i = i+1

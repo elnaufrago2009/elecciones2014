@@ -1,0 +1,20 @@
+= form_for @postulante, :html => { class: 'form-horizontal', role: 'form' } do |f|
+  - if @postulante.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@postulante.errors.count, "error")}"
+      %ul
+        - @postulante.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :nombre_partido, class: 'col-sm-2 control-label'
+    .col-sm-3
+      = f.text_field :nombre_partido, class: 'form-control'
+  .form-group
+    = f.label :nombre_postulante, class: 'col-sm-2 control-label'
+    .col-sm-3
+      = f.text_field :nombre_postulante, class: 'form-control'
+  .form-group
+    .col-sm-2
+    .col-sm-3
+      = f.submit 'Guardar', class: 'btn btn-default'

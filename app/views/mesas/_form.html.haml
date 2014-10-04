@@ -1,0 +1,86 @@
+- if params[:action] == 'new'
+  - @mesa.postulantes.build 
+
+= form_for @mesa, :html => { class: 'form-horizontal', role: 'form' } do |f|
+  - if @mesa.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mesa.errors.count, "error")}"
+      %ul
+        - @mesa.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :nombre, class: 'col-sm-2 control-label'
+    .col-sm-3
+      = f.text_field :nombre, class: 'form-control'
+  .form-group
+    = f.label :colegio_id, class: 'col-sm-2 control-label'
+    .col-sm-3
+      = f.select :colegio_id, Colegio.all.collect{|x| [x.nombre, x.id]}, { include_blank: 'Seleccionar'}, class: 'form-control'  
+
+  %h3 Candidatos
+  %hr
+  = f.fields_for :postulantes do |m|
+
+    .form-group
+      = f.label :mario_gomez_chata, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :mario_gomez_chata, class: 'form-control'
+    .form-group
+      = f.label :porfirio_siles_choque_larico, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :porfirio_siles_choque_larico, class: 'form-control'
+    .form-group
+      = f.label :julian_alave_cuito, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :julian_alave_cuito, class: 'form-control'
+    .form-group
+      = f.label :helmer_joel_fernandez_chaparro, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :helmer_joel_fernandez_chaparro, class: 'form-control'
+    .form-group
+      = f.label :edy_hugo_naca_bailon, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :edy_hugo_naca_bailon, class: 'form-control'
+    .form-group
+      = f.label :sandro_manuel_retamozo_aquije, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :sandro_manuel_retamozo_aquije, class: 'form-control'
+    .form-group
+      = f.label :edgar_rogelio_concori_coaquira, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :edgar_rogelio_concori_coaquira, class: 'form-control'
+    .form-group
+      = f.label :francisco_callacondo_cordova, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :francisco_callacondo_cordova, class: 'form-control'
+    .form-group
+      = f.label :rene_chura_huisa, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :rene_chura_huisa, class: 'form-control'
+    .form-group
+      = f.label :victor_elmer_jareca_laura, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :victor_elmer_jareca_laura, class: 'form-control'
+    .form-group
+      = f.label :edgar_ticona_ramirez, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :edgar_ticona_ramirez, class: 'form-control'
+    .form-group
+      = f.label :jorge_chambi_flores, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :jorge_chambi_flores, class: 'form-control'
+    .form-group
+      = f.label :guadalupe_sorayda_calamullo_arcaya, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :guadalupe_sorayda_calamullo_arcaya, class: 'form-control'
+    .form-group
+      = f.label :victor_choque_mamani, class: 'col-sm-3 control-label'
+      .col-sm-2
+        = m.text_field :victor_choque_mamani, class: 'form-control'
+
+
+  .form-group
+    .col-sm-2
+    .col-sm-3
+      = f.submit 'Guardar', class: 'btn btn-default'

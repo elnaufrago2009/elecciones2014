@@ -1,0 +1,12 @@
+.page-header
+  %h1 Postulantes
+  %p
+    %b Nombre partido:
+    = @postulante.nombre_partido
+  %p
+    %b Nombre postulante:
+    = @postulante.nombre_postulante
+%br
+= link_to 'Editar', edit_postulante_path(@postulante), class: 'btn btn-success'
+= link_to 'Regresar', postulantes_path, class: 'btn btn-warning'
+

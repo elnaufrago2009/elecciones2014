@@ -1,0 +1,106 @@
+.page-header
+  %h1
+    Mesa #
+    %b= @mesa.nombre
+    %small= @mesa.colegio.nombre
+  
+.row
+  .col-sm-12
+    %table.table.table-bordered.table-condensed.table-hover
+      %tr.well
+        %th #
+        %th Nombre y Apellidos
+        %th Partido Politico
+        %th Cantidad
+      - i = 1
+      - @mesa.postulantes.each do |postulante|
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} MARIO GOMEZ CHATA
+          %td{:style => 'font-size: 11px;'} MOVIMIENTO REGIONAL ARRIBA TACNA
+          %td= postulante.mario_gomez_chata
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} PORFIRIO SILES CHOQUE LARICO
+          %td{:style => 'font-size: 11px;'} MOVIMIENTO POPULAR AYMARA QUECHUA AMAZONENSE
+          %td= postulante.porfirio_siles_choque_larico
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} JULIAN ALAVE CUITO
+          %td{:style => 'font-size: 11px;'} MOVIMIENTO REGIONAL NUEVA GENERACION TACNEÑA
+          %td= postulante.julian_alave_cuito
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} HELMER JOEL FERNANDEZ CHAPARRO
+          %td{:style => 'font-size: 11px;'} ORGANIZACION LOCAL (DISTRITAL) INTEGRACION CIUDAD NUEVA
+          %td= postulante.helmer_joel_fernandez_chaparro
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} EDY HUGO ÑACA BAILON
+          %td{:style => 'font-size: 11px;'} ORGANIZACION LOCAL (DISTRITAL) MOVIMIENTO INDEPENDIENTE RECUPEREMOS CIUDAD NUEVA
+          %td= postulante.edy_hugo_naca_bailon
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} SANDRO MANUEL RETAMOZO AQUIJE
+          %td{:style => 'font-size: 11px;'} ORGANIZACION LOCAL (DISTRITAL) NUEVO MALLKU
+          %td= postulante.sandro_manuel_retamozo_aquije
+        - i = i + 1
+        %tr.well
+          %td= i          
+          %td{:style => 'font-size: 11px;'} EDGAR ROGELIO CONCORI COAQUIRA
+          %td{:style => 'font-size: 11px;'} ORGANIZACION LOCAL (DISTRITAL) SOMOS RENOVACION DISTRITAL
+          %td= postulante.edgar_rogelio_concori_coaquira
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} FRANCISCO CALLACONDO CORDOVA
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO ALIANZA PARA EL PROGRESO
+          %td= postulante.francisco_callacondo_cordova
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} RENE CHURA HUISA
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO DEMOCRACIA DIRECTA
+          %td= postulante.rene_chura_huisa
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} VICTOR ELMER JARECA LAURA
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO EL FRENTE AMPLIO POR JUSTICIA, VIDA Y LIBERTAD
+          %td= postulante.victor_elmer_jareca_laura
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} EDGAR TICONA RAMIREZ
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO PARTIDO HUMANISTA PERUANO
+          %td= postulante.edgar_ticona_ramirez
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} JORGE CHAMBI FLORES
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO RESTAURACION NACIONAL
+          %td= postulante.jorge_chambi_flores
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} GUADALUPE SORAYDA CALAMULLO ARCAYA
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO SIEMPRE UNIDOS
+          %td= postulante.guadalupe_sorayda_calamullo_arcaya
+        - i = i + 1
+        %tr
+          %td= i          
+          %td{:style => 'font-size: 11px;'} VICTOR CHOQUE MAMANI
+          %td{:style => 'font-size: 11px;'} PARTIDO POLÍTICO VAMOS PERU
+          %td= postulante.victor_choque_mamani
+
+
+
+%br
+= link_to 'Editar', edit_mesa_path(@mesa), class: 'btn btn-success'
+= link_to 'Regresar', mesas_path, class: 'btn btn-warning'
+

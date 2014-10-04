@@ -1,0 +1,20 @@
+= form_for @colegio, :html => { class: 'form-horizontal', role: 'form' } do |f|
+  - if @colegio.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@colegio.errors.count, "error")}"
+      %ul
+        - @colegio.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :nombre, class: 'col-sm-2 control-label'
+    .col-sm-3
+      = f.text_field :nombre, class: 'form-control'
+  .form-group
+    = f.label :eleccione_id, class: 'col-sm-2 control-label'
+    .col-sm-3
+      = f.select :eleccione_id, Eleccione.all.collect{|x| [x.nombre, x.id]}, {include_blank: 'Seleccionar'}, class: 'form-control'
+  .form-group
+    .col-sm-2
+    .col-sm-3
+      = f.submit 'Guardar', class: 'btn btn-default'

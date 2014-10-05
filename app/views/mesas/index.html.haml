@@ -27,8 +27,8 @@
           %th #
           %th Numero Mesa
           %th Colegio    
-          %th Votos Concori 
-          %th Ganado/Perdido     
+          %th Votos Concori    
+          %th Ganado/Perdido  
           %th Acciones
         - i = 1
         - @mesas.each do |mesa|
@@ -38,8 +38,67 @@
               Nº
               = mesa.nombre
             %td= mesa.colegio.nombre
+            - x = mesa.postulantes[0].edgar_rogelio_concori_coaquira.to_i
+            - a = mesa.postulantes[0].mario_gomez_chata.to_i
+            - b = mesa.postulantes[0].porfirio_siles_choque_larico.to_i
+            - c = mesa.postulantes[0].julian_alave_cuito.to_i
+            - d = mesa.postulantes[0].helmer_joel_fernandez_chaparro.to_i
+            - e = mesa.postulantes[0].edy_hugo_naca_bailon.to_i
+            - f = mesa.postulantes[0].sandro_manuel_retamozo_aquije.to_i
+            - g = mesa.postulantes[0].edgar_rogelio_concori_coaquira.to_i
+            - h = mesa.postulantes[0].francisco_callacondo_cordova.to_i
+            - ii = mesa.postulantes[0].rene_chura_huisa.to_i
+            - j = mesa.postulantes[0].victor_elmer_jareca_laura.to_i
+            - k = mesa.postulantes[0].edgar_ticona_ramirez.to_i
+            - l = mesa.postulantes[0].jorge_chambi_flores.to_i
+            - m = mesa.postulantes[0].guadalupe_sorayda_calamullo_arcaya.to_i
+            - n = mesa.postulantes[0].victor_choque_mamani.to_i            
+              
+            - gg = 1
+
+            - if g < a
+              - gg = 0
+            - if g < b
+              - gg = 0
+            - if g < c
+              - gg = 0
+            - if g < d
+              - gg = 0
+            - if g < e
+              - gg = 0
+            - if g < f
+              - gg = 0
+            - if g < g
+              - gg = 0
+            - if g < h
+              - gg = 0
+            - if g < ii
+              - gg = 0
+            - if g < j
+              - gg = 0
+            - if g < k
+              - gg = 0
+            - if g < l
+              - gg = 0
+            - if g < m
+              - gg = 0
+            - if g < n
+              - gg = 0
+
             %td= mesa.postulantes[0].edgar_rogelio_concori_coaquira
-            %td 
+            %td             
+              - if gg == 1
+                - if g == 0
+
+                  %span.label.label-info Esperando
+                - else
+                  %span.label.label-success Ganamos                  
+              - else
+                - if g == 0
+                  %span.label.label-info Esperando                 
+                - else
+                  %span.label.label-danger Perdimos
+                
             %td
               = link_to 'Ver', mesa, class: 'btn btn-info btn-xs'              
               = link_to 'Editar', edit_mesa_path(mesa), class: 'btn btn-success btn-xs'

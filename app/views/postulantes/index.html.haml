@@ -51,11 +51,75 @@
         %td{:style => 'font-size: 11px;'} ORGANIZACION LOCAL (DISTRITAL) NUEVO MALLKU
         %td= @sandro_manuel_retamozo_aquije
       - i = i + 1
-      %tr.well
+
+      - x = @edgar_rogelio_concori_coaquira.to_i
+      - a = @mario_gomez_chata.to_i
+      - b = @porfirio_siles_choque_larico.to_i
+      - c = @julian_alave_cuito.to_i
+      - d = @helmer_joel_fernandez_chaparro.to_i
+      - e = @edy_hugo_naca_bailon.to_i
+      - f = @sandro_manuel_retamozo_aquije.to_i
+      - g = @edgar_rogelio_concori_coaquira.to_i
+      - h = @francisco_callacondo_cordova.to_i
+      - ii = @rene_chura_huisa.to_i
+      - j = @victor_elmer_jareca_laura.to_i
+      - k = @edgar_ticona_ramirez.to_i
+      - l = @jorge_chambi_flores.to_i
+      - m = @guadalupe_sorayda_calamullo_arcaya.to_i
+      - n = @victor_choque_mamani.to_i            
+        
+      - gg = 1
+
+      - if g < a
+        - gg = 0
+      - if g < b
+        - gg = 0
+      - if g < c
+        - gg = 0
+      - if g < d
+        - gg = 0
+      - if g < e
+        - gg = 0
+      - if g < f
+        - gg = 0
+      - if g < g
+        - gg = 0
+      - if g < h
+        - gg = 0
+      - if g < ii
+        - gg = 0
+      - if g < j
+        - gg = 0
+      - if g < k
+        - gg = 0
+      - if g < l
+        - gg = 0
+      - if g < m
+        - gg = 0
+      - if g < n
+        - gg = 0
+
+
+          
+
+      %tr.well.info
         %td= i          
-        %td{:style => 'font-size: 11px;'} EDGAR ROGELIO CONCORI COAQUIRA
-        %td{:style => 'font-size: 11px;'} ORGANIZACION LOCAL (DISTRITAL) SOMOS RENOVACION DISTRITAL
-        %td= @edgar_rogelio_concori_coaquira
+        %td{:style => 'font-size: 11px;'} 
+          %b EDGAR ROGELIO CONCORI COAQUIRA
+        %td{:style => 'font-size: 11px;'} 
+          %b ORGANIZACION LOCAL (DISTRITAL) SOMOS RENOVACION DISTRITAL
+        %td
+          %b= @edgar_rogelio_concori_coaquira
+          - if gg == 1
+            - if g == 0
+              %span.label.label-info Esperando
+            - else
+              %span.label.label-success Ganando                  
+          - else
+            - if g == 0
+              %span.label.label-info Esperando                 
+            - else
+              %span.label.label-danger Perdiendo
       - i = i + 1
       %tr
         %td= i          
